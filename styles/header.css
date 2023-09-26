@@ -1,0 +1,207 @@
+.cabecalho {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+}
+
+.cabecalho__menu-hamburguer {
+    width: 24px;
+    height: 24px;
+    background-image: url(../img/menu-black.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    align-items: center;
+
+}
+
+.container__botao:checked~.cabecalho__rotulo>.cabecalho__menu-hamburguer {
+    background-image: url(/img/menu_withe.svg);
+}
+
+.container__botao:checked~.cabecalho__rotulo {
+background: var(--azul-degrade);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.container__imagem {
+    padding: 1em;
+}
+
+.lista-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    font-size: 1rem;
+    font-family: var(--fonte-principal);
+    line-height: normal;
+    background-color: var(--branco);
+    width: 60vw;
+    text-transform: uppercase;
+}
+
+.lista-titulo {
+    font-weight: 700;
+    color: var(--laranja);
+    padding: 1.5rem 1.5rem 1rem 1.5rem;
+    font-size: 1rem
+}
+
+.lista-item {
+    padding: 1rem 1.5rem;
+    font-weight: 400;
+}
+
+.lista-link {
+    background: var(--azul-degrade);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container__botao {
+    display: none;
+}
+
+.container__botao:checked~.lista-menu {
+    display: block;
+}
+
+
+/*  LAYOUT PARA TABLETS */
+.container__titulo,
+.container__opcoes {
+    display: none;
+    
+}
+
+
+@media screen and (min-width: 1024px) {
+    .container__opcoes {
+        display: flex;
+
+        font-size: 1rem;
+        font-family: var(--fonte-principal);
+        font-weight: 400;
+    }
+
+    .container__titulo,
+    .container__titulo--negrito {
+        display: flex;
+        font-size: 1.875rem;
+        font-family: var(--fonte-secundaria);
+    }
+
+    .container__titulo {
+        font-weight: 400;
+    }
+
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+
+    .container__opcoes-item {
+        padding: 0 1rem;
+        color: var(--preto);
+    }
+
+    .container__opcoes-link {
+        text-decoration: none;
+        color: var(--preto)
+    }
+    .container__opcoes-item:hover, .container__opcoes-link:hover {
+        color: var(--laranja);
+    }
+
+    .cabecalho__menu-hamburguer,
+    .container__imagem-transparente {
+        display: none;
+    }
+
+    .container__botao-categorias:checked ~ .container__rotulo > .container__opcoes-item {
+       background: var(--azul-degrade);
+       padding:1.79rem 1rem;
+       color: var(--branco);
+    }
+
+    .container__botao-categorias:checked~.lista-menu {
+        display: block;
+        width: auto;
+    }
+
+    .lista-item:hover {
+        background: var(--azul-degrade);
+       
+    }
+
+    .lista-item:hover > .lista-link {
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+
+
+    .container__botao-categorias {
+        display: none;
+    }
+}
+
+/*  LAYOUT PARA DESKTOP */
+    .container__imagem--descricao {
+        display: none;
+    }
+
+
+@media screen and (min-width: 1728px) {
+    .container__icones {
+        display: flex;
+        align-items: center;
+        
+        font-family: var(--fonte-principal);
+        text-decoration: none;
+
+        margin: 0 5rem 0 0;
+    }
+    .container__imagem--descricao {
+        display: block;
+        font-size: 1.25rem;
+        background: var(--azul-degrade);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        position: relative;
+        top: 0;
+    }
+    .container__imagem--descricao:hover {
+       font-weight: 700;
+       transition: all 0.8;
+    }
+
+    .container__opcoes {
+        padding-left: 2rem;
+        margin-right: auto;
+    }
+
+    .container__botao-categorias:checked ~ .container__rotulo > .container__opcoes-item {
+        background: var(--azul-degrade);
+        padding:1.79rem 1rem;
+        color: var(--branco);
+     }
+
+     .lista-item:hover {
+        background: var(--azul-degrade);
+    }
+
+    .lista-item:hover > .lista-link {
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+
+}
+
